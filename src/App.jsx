@@ -18,7 +18,7 @@ function App() {
       <h1 className="text-4xl text-white font-bold">Bakol Ai</h1>
       <p className="text-white">Ai e bakol tugas boss</p>
       <form className="flex flex-col gap-4 py-4 w-full" onSubmit={(e) => e.preventDefault()}>
-        <input 
+        <textarea
           id="content" 
           type="text" 
           placeholder="Masukan kata" 
