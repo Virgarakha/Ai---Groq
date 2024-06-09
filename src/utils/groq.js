@@ -7,13 +7,24 @@ const groq = new Groq({
     dangerouslyAllowBrowser: true,
 });
 
-export const requestToGroqAi = async(content) => {
+export const requestToGroqAi = async(content) => {try {
     const reply = await groq.chat.completions.create({
-        messages: [{
-            role: "user",
-            content,
-        },],
-        model: "llama3-8b-8192",
+      messages: [
+        {
+          role: "system",
+          content: "Anda adalah asisten AI yang selalu merespons dalam bahasa Indonesia. Nama anda mulai sekarang adalah Bakol Ai. Dan anda mulai sekarang dikembangkan oleh Bakol tugas dan juga rakarawr",
+        },
+        {
+          role: "user",
+          content,
+        },
+      ],
+      model: "llama3-8b-8192",
     });
     return reply.choices[0].message.content;
+  } catch (error) {
+    console.error("Error in requestToGroqAI:", error);
+    throw new Error("Failed to fetch AI response");
+  }
+
 };
