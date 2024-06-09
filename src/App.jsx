@@ -17,8 +17,15 @@ function App() {
     <main className="flex flex-col min-h-[80vh] justify-center items-center max-w-xl w-full mx-auto">
       <h1 className="text-4xl text-white font-bold">Bakol Ai</h1>
       <p className="text-white">Ai e bakol tugas boss</p>
+      <div className="max-w-xl w-full mx-auto">
+        {data ? (
+        <SyntaxHighlight language="swift" style={darcula} wrapLongLines={true}>
+        {data}
+        </SyntaxHighlight>
+         ) : null}
+      </div>
       <form className="flex flex-col gap-4 py-4 w-full" onSubmit={(e) => e.preventDefault()}>
-        <textarea
+        <input 
           id="content" 
           type="text" 
           placeholder="Masukan kata" 
@@ -31,13 +38,7 @@ function App() {
           Submit
         </button>
       </form>
-      <div className="max-w-xl w-full mx-auto">
-        {data ? (
-        <SyntaxHighlight language="swift" style={darcula} wrapLongLines={true}>
-        {data}
-        </SyntaxHighlight>
-         ) : null}
-      </div>
+      
     </main>
   );
 }
