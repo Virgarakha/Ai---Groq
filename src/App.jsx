@@ -17,6 +17,11 @@ function App() {
     <main className="flex flex-col min-h-[80vh] justify-center items-center max-w-xl w-full mx-auto">
       <h1 className="text-4xl text-white font-bold">Bakol - Ai</h1>
       <p className="text-white text-start">Product by : bakol tugas</p>
+      <div style={{marginTop: "20px"}} className="bawah">
+        <li><a href="https://wa.me/+6281333794278">Service</a></li>
+        <li><a href="https://wa.me/+6281333794278">Developer</a></li>
+        <li><a href="https://wa.me/+6281333794278">Docs</a></li>
+      </div>
       <div style={{marginTop: "20px"}} className="max-w-xl w-full mx-auto ">
         {data ? (
         <SyntaxHighlight language="javascript" style={a11yDark} wrapLongLines={true}>
@@ -39,10 +44,7 @@ function App() {
         </button>
         <p className="text-white text-start p-0 opacity-50">versien 1.2</p>
       </form>
-      <div className="bawah">
-        <li><a href="https://wa.me/+6281333794278">Contact service</a></li>
-        <li><a href="https://wa.me/+6281333794278">Developer</a></li>
-      </div>
+      
       <div style={{backgroundColor: "#2b2b2b", color: "#bababa", fontWeight: "400", textAlign: "start", padding: "15px"}} className="mt-10 text-white font-bold py-2 px-4 rounded w-full">
         <p>► Ai pintar gratis yang di develop oleh bakol tugas (bt)</p>
       </div>
