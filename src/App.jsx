@@ -103,11 +103,13 @@ function App() {
               Submit
             </button>
           </form>
+          <div className="px-4">
           <p className="text-white text-start p-0 opacity-50 mt-4">version 3.4</p>
           <div className="flex justify-between mt-4">
             <a href="https://wa.me/+6281333794278" className="text-white">Service</a>
             <a href="https://wa.me/+6281333794278" className="text-white">Developer</a>
             <a href="https://wa.me/+6281333794278" className="text-white">Docs</a>
+          </div>
           </div>
         </div>
       </div>
