@@ -1,7 +1,7 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -10,22 +10,10 @@ body {
   color: #000;
 }
 
-main {
-  background: rgb(99,99,99);
-  background: radial-gradient(circle, rgba(99,99,99,1) 13%, rgba(0,0,0,1) 80%);
-  background-size: 90%;
-}
-
-.navbar {
-  width: 100%;
-  padding: 20px;
-  padding-bottom: 10vh;
-}
-
-.nav {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   color: white;
 }
 
@@ -33,61 +21,77 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #000;
+  width: 100%;
+  padding: 10px 15px;
+  position: fixed;
+  top: 0;
+  z-index: 2;
 }
 
-.bawah {
+.navbox .logo2 img {
+  width: 70px;
+}
+
+.link {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.bawah li {
+  gap: 20px;
   list-style: none;
-  padding: 0 10px;
-  margin: 0;
 }
 
-.bawah li a {
-  background-color: #2b2b2b;
-  padding: 10px 20px;
+.link li a {
   text-decoration: none;
-  color: #7094ff;
+  color: #dadada;
   border-radius: 5px;
 }
 
-.bawah li a:hover {
+.link li a:hover {
   background-color: #4164cd;
   color: #2b2b2b;
 }
 
-.logo2 h1 {
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 20px 20px; /* Adjusted for the fixed navbar */
+  flex-grow: 1;
+}
+
+.intro2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.intro2 h1 {
+  font-size: 30px;
+}
+
+.chat-box {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-message {
+  background-color: #007bff;
   color: white;
-  text-align: start;
+  align-self: flex-end;
 }
 
-.logo2 {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-
-.inputan {
-  width: 80%;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.ai-message {
+  color: white;
+  align-self: flex-start;
 }
 
 .typing-indicator {
@@ -97,9 +101,19 @@ main {
   height: 24px;
 }
 
+form {
+  position: fixed;
+  bottom: 0;
+  padding: 20px;
+}
+
+form input {
+  color: #000;
+}
+
 .dot {
-  width: 8px;
-  height: 8px;
+  width: 5px;
+  height: 5px;
   margin: 0 4px;
   background-color: white;
   border-radius: 50%;
@@ -125,52 +139,70 @@ main {
   }
 }
 
+.input-form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 10px;
+}
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.input-field {
+  flex: 1;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: purple;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #d1a5e4;
+}
+
+.spinner {
+  margin: 20px auto 0;
+  width: 70px;
+  text-align: center;
+}
+
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  border-radius: 100%;
+  display: inline-block;
+  animation: bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  animation-delay: -0.16s;
+}
+
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0);
   }
-  to {
-    transform: rotate(360deg);
+  40% {
+    transform: scale(1);
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
+  .logo {
     animation: logo-spin infinite 20s linear;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-
-@media screen and (max-width: 600px) {
-  body {
-    font-size: 70%;
-  }
-
-  .navbar {
-    padding: 10px;
-    padding-bottom: 3vh;
-  }
-
-  .bawah li a {
-    font-size: 14px;
-  }
-
-  .card {
-    padding: 1em;
-  }
-
-  main {
-    background-size: 200%;
-  }
-
-  
 }
