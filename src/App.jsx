@@ -54,13 +54,13 @@ function App() {
         <p className="text-white text-start mb-4">Product by: bakol tugas</p>
         <div className="flex flex-col w-full max-w-2xl mx-auto">
           <div className="flex flex-col rounded-lg p-4 space-y-4 mb-4">
-            <div className="bg-gray-200 p-4 rounded-lg text-black">
+            <div className="bg-gray-200 p-2 rounded-lg text-black">
               ►😎 Ai pintar gratis yang di develop oleh bakol tugas (bt)
             </div>
-            <div className="bg-gray-200 p-4 rounded-lg text-black">
+            <div className="bg-gray-200 p-2 rounded-lg text-black">
               ► 😉 Ai Gratis yang lebih cepat untuk meresponse anda!
             </div>
-            <div className="bg-gray-200 p-4 rounded-lg text-black">
+            <div className="bg-gray-200 p-2 rounded-lg text-black">
               ► 👌 Ai programming yang siap menjadi tools programmer!
             </div>
           </div>
