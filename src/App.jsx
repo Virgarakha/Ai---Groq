@@ -64,6 +64,7 @@ function App() {
               ► 👌 Ai programming yang siap menjadi tools programmer!
             </div>
           </div>
+          <div className="px-4">
           <div className="bg-black p-4 rounded-lg mb-4">
             {isTyping ? (
               <div className="typing-indicator">
@@ -82,7 +83,8 @@ function App() {
               )
             )}
           </div>
-          <form className="flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
+          </div>
+          <form className="flex flex-col gap-4 p-4" onSubmit={(e) => e.preventDefault()}>
             <input
               id="content"
               type="text"
