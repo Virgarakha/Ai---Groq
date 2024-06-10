@@ -142,8 +142,7 @@ form input {
 .input-form {
   display: flex;
   justify-content: center;
-  width: 100%;
-  max-width: 600px;
+  width: 90%;
   margin-top: 10px;
 }
 
