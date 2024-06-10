@@ -11,6 +11,12 @@ body {
   color: #000;
 }
 
+main {
+  background: rgb(99,99,99);
+  background: radial-gradient(circle, rgba(99,99,99,1) 13%, rgba(0,0,0,1) 80%);
+  background-size: 90%;
+}
+
 .navbar {
   width: 100%;
   padding: 20px;
@@ -142,4 +148,30 @@ body {
 
 .read-the-docs {
   color: #888;
+}
+
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 70%;
+  }
+
+  .navbar {
+    padding: 10px;
+    padding-bottom: 3vh;
+  }
+
+  .bawah li a {
+    font-size: 14px;
+  }
+
+  .card {
+    padding: 1em;
+  }
+
+  main {
+    background-size: 200%;
+  }
+
+  
 }
