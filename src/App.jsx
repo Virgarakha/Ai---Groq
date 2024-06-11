@@ -4,6 +4,7 @@ import { Light as SyntaxHighlight } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import './App.css';
 import logo from './assets/nova.png'; // Pastikan path ke file nova.png benar
+import share from './assets/share.svg'; // Pastikan path ke file nova.png benar
 
 function App() {
   const [messages, setMessages] = useState([]);
@@ -18,7 +19,7 @@ function App() {
     const lastInput = messages.length > 0 ? messages[messages.length - 1].user : "";
     // Membandingkan input saat ini dengan input terakhir
     if (inputValue === lastInput) {
-      alert("Kamu tidak bisa menanyakan hal yang sama sebanyak 3x");
+      alert("Kamu tidak bisa menanyakan hal yang sama sebanyak 2x");
       return;
     }
 
@@ -106,7 +107,7 @@ function App() {
               onClick={handleSubmit}
               className="submit-button"
             >
-              Submit
+              <img src={share} alt="" />
             </button>
           </form>
         )}
