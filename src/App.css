@@ -139,6 +139,11 @@ form input {
   }
 }
 
+form input {
+  background-color: #2e2e2e;
+  color: #fff;
+}
+
 .input-form {
   display: flex;
   justify-content: center;
@@ -157,15 +162,15 @@ form input {
 .submit-button {
   padding: 10px 20px;
   margin-left: 10px;
-  background-color: purple;
-  color: white;
+  background-color: #ffffff;
+  color: #7b19a1;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .submit-button:hover {
-  background-color: #d1a5e4;
+  background-color: white;
 }
 
 .spinner {
