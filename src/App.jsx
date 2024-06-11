@@ -66,7 +66,7 @@ function App() {
         <div className="chat-box">
           {messages.map((message, index) => (
             <div key={index} className={`message ${message.ai ? 'ai-message' : 'user-message'}`}>
-              <p>{message.ai ? '👾 Bakol Ai' : 'You'}:</p>
+              <p>{message.ai ? '👾 Nova Ai' : 'You'}:</p>
               <SyntaxHighlight language="javascript" style={a11yDark} wrapLongLines={true}>
                 {message.ai ? message.ai : message.user}
               </SyntaxHighlight>
@@ -74,7 +74,7 @@ function App() {
           ))}
           {isTyping && (
             <div className="message ai-message typing-indicator">
-              <p>👾 Bakol Ai:</p>
+              <p>👾 Nova Ai:</p>
               <div className="spinner">
                 <div className="bounce1"></div>
                 <div className="bounce2"></div>
