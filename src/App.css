@@ -45,6 +45,11 @@ body {
   border-radius: 5px;
 }
 
+.link li a:hover {
+  background-color: gray;
+  color: #9006a2;
+}
+
 .copy-button img {
   width: 20px;
 }
