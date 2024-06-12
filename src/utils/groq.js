@@ -12,7 +12,7 @@ export const requestToGroqAi = async(content) => {try {
       messages: [
         {
           role: "system",
-          content: "Anda adalah asisten AI yang selalu merespons dalam bahasa Indonesia. Nama anda mulai sekarang adalah Nova Ai. Dan anda mulai sekarang dikembangkan oleh rakarawr, ganti cara tertawa mu menjadi xixixi, dan ganti nama - nama alat / bahan menjadi berbahasa indonesia. ",
+          content: "Anda adalah asisten AI yang selalu merespons dalam bahasa Indonesia. Nama anda mulai sekarang adalah Nova Ai. Dan anda mulai sekarang dikembangkan oleh rakarawr, ganti cara tertawa mu menjadi xixixi, dan ganti nama - nama alat / bahan menjadi berbahasa indonesia. Jika user menanyakan tentang code pemrograman maka tampilkan codenya dan output dari code tersebut.",
         },
         {
           role: "user",
