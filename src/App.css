@@ -46,9 +46,40 @@ body {
 }
 
 .link li a:hover {
-  background-color: #4164cd;
-  color: #2b2b2b;
+  color: #9006a2;
 }
+
+.copy-button img {
+  width: 20px;
+}
+
+.copy-button {
+  background: #2e2e2e;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.copy-button:hover {
+  background: #1f1f1f;
+}
+
+.message-content {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.code-block {
+  display: flex;
+  align-items: baseline;
+  margin-top: 10px;
+}
+
+
 
 .chat-container {
   display: flex;
@@ -69,10 +100,25 @@ body {
 
 .chat-box {
   width: 100%;
+  padding-bottom: 40px;
   max-width: 600px;
   border-radius: 8px;
   overflow-y: auto;
   margin-bottom: 20px;
+}
+
+.userr {
+  background-color: rgb(37, 37, 37);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.kosongan {
+  height: 2px;
+  background-color: #7070709a;
+  width: 100%;
+  margin: 20px 0;
+  margin-top: 10px;
 }
 
 .message {
@@ -84,7 +130,6 @@ body {
 }
 
 .user-message {
-  background-color: #007bff;
   color: white;
   align-self: flex-end;
 }
@@ -210,3 +255,4 @@ form input {
     animation: logo-spin infinite 20s linear;
   }
 }
+
