@@ -119,13 +119,10 @@ function App() {
           </div>
           <div className="link">
             <li>
-              <a href="">Docs</a>
+              <a href="https://bakolai-free.vercel.app/asset/component/docs.html">Docs</a>
             </li>
             <li>
-              <a href="">Dev</a>
-            </li>
-            <li>
-              <a href="">Github</a>
+              <a href="https://bakolai-free.vercel.app">Log Out</a>
             </li>
           </div>
         </div>
