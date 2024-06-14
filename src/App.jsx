@@ -8,10 +8,10 @@ import "./App.css";
 import logo from "./assets/nova.png";
 import share from "./assets/share.svg";
 import copy from "./assets/copy.svg";
-import check from "./assets/check (1).svg"; // Import the check image
+import check from "./assets/check (1).svg";
 import clock from "./assets/clock (1).svg";
-import mic from "./assets/mic.svg"; // Import the microphone image
-import micoff from "./assets/mic-off.svg"; // Import the microphone off image
+import mic from "./assets/mic.svg";
+import micoff from "./assets/mic-off.svg";
 
 function App() {
   const [messages, setMessages] = useState([]);
@@ -20,8 +20,9 @@ function App() {
   const [isInputVisible, setIsInputVisible] = useState(true);
   const [isListening, setIsListening] = useState(false);
   const [isImageProcessing, setIsImageProcessing] = useState(false);
-  const chatBoxRef = useRef(null); // Add ref for chat box
-  const recognitionRef = useRef(null); // Add ref for speech recognition
+  const [showPopup, setShowPopup] = useState(true);
+  const chatBoxRef = useRef(null);
+  const recognitionRef = useRef(null);
 
   useEffect(() => {
     if (window.SpeechRecognition || window.webkitSpeechRecognition) {
@@ -110,7 +111,7 @@ function App() {
     return parts.map((part, index) => ({
       explanation: part.trim(),
       code: codeBlocks[index] ? codeBlocks[index].replace(/```/g, "").trim() : null,
-      copied: false, // Add copied state for each part
+      copied: false,
     }));
   };
 
@@ -134,7 +135,6 @@ function App() {
     }
     setMessages(updatedMessages);
 
-    // Reset copied state after a short delay
     setTimeout(() => {
       if (partIndex === null) {
         updatedMessages[messageIndex].copied = false;
@@ -167,8 +167,20 @@ function App() {
     }
   };
 
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  };
+
   return (
     <main className="main-container">
+      {showPopup && (
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <h2>Welcome to Premium</h2>
+            <button onClick={handleClosePopup}>Close</button>
+          </div>
+        </div>
+      )}
       <nav className="navbar">
         <div className="navbox">
           <div className="logo2">
@@ -179,7 +191,7 @@ function App() {
               <a href="https://bakolai-free.vercel.app/asset/component/docs.html">Docs</a>
             </li>
             <li>
-              <a href="https://bakolai-free.vercel.app">Log out</a>
+              <a href="https://bakolai-free.vercel.app">Log-out</a>
             </li>
           </div>
         </div>
@@ -283,21 +295,22 @@ function App() {
         </button>
         {isInputVisible && (
           <form style={{ display: 'flex', alignItems: 'center', width: '100%' }} className="input-form" onSubmit={(e) => e.preventDefault()}>
-            <div style={{  backgroundColor: '#2e2e2e', color: 'white', padding: '5px', borderRadius: '5px',display: 'flex', alignItems: 'center', gap: '5px', marginRight: '10px' }} className="micc">
-            <button type="button" onClick={handleSpeechToggle} className="speech-button">
-              <img
-                style={{ width: '20px' }}
-                src={isListening ? mic : micoff}
-                alt=""
+            <div style={{ backgroundColor: '#2e2e2e', color: 'white', padding: '5px', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '5px', marginRight: '10px' }} className="micc">
+              <button type="button" onClick={handleSpeechToggle} className="speech-button">
+                <img
+                  style={{ width: '20px' }}
+                  src={isListening ? mic : micoff}
+                  alt=""
+                />
+                <div className={isListening ? 'mic-indicator' : 'mic-indicator-off'}></div>
+              </button>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageUpload}
+                className="image-upload"
+                style={{ width: '30px' }}
               />
-            </button>
-            <input
-              type="file"
-              accept="image/*"
-              onChange={handleImageUpload}
-              className="image-upload"
-              style={{ width: '30px' }}
-            />
             </div>
             <input
               id="content"
